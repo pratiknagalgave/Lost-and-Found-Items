@@ -52,7 +52,7 @@ public class HomeScreen extends AppCompatActivity {
         recyclerView.setAdapter(notesAdapter);
         FloatingActionButton fab = findViewById(R.id.fab);
         firebaseDatabase=FirebaseDatabase.getInstance();
-        databaseReference=firebaseDatabase.getReference("Notes");
+        databaseReference=firebaseDatabase.getReference("Item");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

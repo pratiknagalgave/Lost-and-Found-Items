@@ -208,7 +208,7 @@ private DatabaseReference mDatabase;
 
 
 
-    public void AddNotes(View view) {
+    public void AddItem(View view) {
         titlesend=title.getText().toString();
         descsend=desc.getText().toString();
 
@@ -224,13 +224,13 @@ private DatabaseReference mDatabase;
         }
 
 
-        AddNotes(titlesend,descsend, posteddatesend, passwordsend, urlidtvsend);
+        AddItem(titlesend,descsend, posteddatesend, passwordsend, urlidtvsend);
 
     }
 
 
 
-    private void AddNotes(String titlesend, String descsend, String posteddatesend, String passwordsend, String urlidtvsend)
+    private void AddItem(String titlesend, String descsend, String posteddatesend, String passwordsend, String urlidtvsend)
     {
 
         String id=mDatabase.push().getKey();

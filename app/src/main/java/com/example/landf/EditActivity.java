@@ -71,7 +71,7 @@ Button updates,delete;
 
 
                     if(TempPass.trim().equals(password.getText().toString().trim()))
-                        UpdateNotes(id);
+                        UpdateItem(id);
 
                 }
             });
@@ -85,7 +85,7 @@ Button updates,delete;
 
 
                  if(TempPass.trim().equals(password.getText().toString().trim()))
-                     deleteNote(id);
+                     deleteItem(id);
 
              }
          });
@@ -93,7 +93,7 @@ Button updates,delete;
 
      }
 
-    private void UpdateNotes(String id)
+    private void UpdateItem(String id)
     {
         titlesend=title.getText().toString();
         descsend=desc.getText().toString();
@@ -105,19 +105,19 @@ Button updates,delete;
 
 
         Listdata listdata = new Listdata(id,titlesend, descsend, postedtimesend, passwordsend, urlidtvsend );
-        mDatabase.child("Notes").child(id).setValue(listdata).
+        mDatabase.child("Item").child(id).setValue(listdata).
                 addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                Toast.makeText(EditActivity.this, "Notes Updated", Toast.LENGTH_SHORT).show();
+                Toast.makeText(EditActivity.this, "Item Updated", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getApplicationContext(),HomeScreen.class));
             }
         });
 
     }
 
-    private void deleteNote(String id) {
-        mDatabase.child("Notes").child(id).removeValue()
+    private void deleteItem(String id) {
+        mDatabase.child("Item").child(id).removeValue()
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {

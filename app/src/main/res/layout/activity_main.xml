@@ -103,7 +103,7 @@
         android:textColor="@android:color/white"
         android:onClick="AddNotes"
         android:id="@+id/addnotes"
-        android:text="Save"
+        android:text="Submit For Approval"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
